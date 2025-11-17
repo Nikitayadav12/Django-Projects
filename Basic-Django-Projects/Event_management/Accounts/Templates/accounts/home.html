@@ -1,0 +1,98 @@
+{% load static %}
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Platform</title>
+    <style>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+.header {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.button {
+    margin-top:40px;
+    padding: 10px 30px;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>Welcome to Our Event Management Platform</h1>
+            <p>Streamline your events, manage attendees, and more!</p>
+        </header>
+
+        <div class="action-container">
+            <h2>Start Exploring</h2>
+            <div class="action-buttons">
+                <a href="{% url 'login' %}" class="button">Login</a>
+                <a href="{% url 'register' %}" class="button">Register</a>
+                <a href="http://127.0.0.1:8000/eventapp/event/" class="button">Event</a>
+
+            </div>
+            <div class="event-section">
+                {% include 'attendees/attendee.html' %}
+
+        </div>
+        </div>
+
+        <footer class="footer">
+            <p>Created  by our Team</p>
+        </footer>
+    </div>
+</body>
+</html>
